@@ -15,12 +15,12 @@ def handle_flash(x, y, depth = 0):
         spot_adder(nx, ny)
 
 # combined part 1 and part 2
-for _ in range(int(1e5)):
+for c in range(int(1e5)):
     for i, row in enumerate(f):
         for j, val in enumerate(row): spot_adder(i, j)
     f = [[a if a > 0 else 0 for a in row] for row in f]
     if num_flashes[0] - num_flashes[1] == 100:  
-        print("Part 2:", _ + 1)
+        print("Part 2:", c + 1)
         break
-    if _ == 99: print("Part 1:", num_flashes[0])
+    if c == 99: print("Part 1:", num_flashes[0])
     num_flashes[1] = num_flashes[0]
