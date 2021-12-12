@@ -11,7 +11,7 @@ def spot_adder(x, y):
 def handle_flash(x, y, depth = 0):
     f[x][y] = -1; num_flashes[0] += 1
     for ax, ay in perms: 
-        if not in_bounds((nx:=x+ax), (ny:=y + ay)): continue
+        if not in_bounds((nx:=x+ax), (ny:=y+ay)): continue
         spot_adder(nx, ny)
 
 # combined part 1 and part 2
