@@ -44,11 +44,11 @@ def intersect_3d(a, b):
 
     return res if all(res) else None
 
-def volume(cube, depth=0):
+def volume(cube):
     (x1, x2), (y1, y2), (z1, z2) = cube[0]
     vol = (x2 - x1 + 1) * (y2 - y1 + 1) * (z2 - z1 + 1)
     for c in cube[1]: # compute volume of holes
-        vol -= volume(c, depth = depth + 1)
+        vol -= volume(c)
     return vol
 
 def make_hole(cube, bounds):
